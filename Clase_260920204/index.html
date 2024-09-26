@@ -1,41 +1,102 @@
+<!--Indica que el archivo será de tipo html-->
 <!DOCTYPE html>
+<!--Hace que el idioma del código sea en inglés-->
 <html lang="en">
+<!--Empieza la parte del encabezado de la página-->
 <head>
+    <!--Especifica la codificación de carácteres que se usará, permitiendo usar una variedad de carácteres y símbolos-->
     <meta charset="UTF-8">
+    <!--Especifica la descripción de la página, las palabras clave, el autor del documento y la configuración de la ventana gráfica-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Especifica el título que tendrá la página en la pestaña-->
     <title>Calculadora Sencilla</title>
+    <!--Enlaza al archivo de css con el de html-->
     <link rel="stylesheet" href="./styles.css">
 </head>
+
+<!--Inicia el cuerpo de la página, la parte predominante-->
 <body>
+    <!--Se inicia un "contenedor", de modo que si se le adjunta una clase todo su contenido será afectado por dicha clase-->
     <div class="calculator">
+        <!--Se crea un espacio en el cual se mostrarán valores y signos según el usuario de click en la interfaz,
+        por el atributo "disabled" el usuario no puede escribir nada por medio del teclado en este espacio-->
         <input type="text" id="display" class="calculator-screen" value="" disabled>
 
+        <!--Se inicia otro "contenedor" o sección-->
         <div class="calculator-buttons">
+            <!--Al darle click a este botón llamará a la función "clearDisplay()" en el JS-->
             <button class="button" onclick="clearDisplay()">C</button>
+            <!--Al darle click a este botón llamará a la función "deleteLast()" en el JS-->
             <button class="button" onclick="deleteLast()">DEL</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso una barra,
+            graficamente se muestra con un / en el input-->
             <button class="button" onclick="appendToDisplay('/')">/</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un asterisco,
+            graficamente se muestra con un * -->
             <button class="button" onclick="appendToDisplay('*')">*</button>
 
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 7,
+            graficamente se muestra con un 7-->
             <button class="button" onclick="appendToDisplay('7')">7</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 8,
+            graficamente se muestra con un 8-->
             <button class="button" onclick="appendToDisplay('8')">8</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 9,
+            graficamente se muestra con un 9-->
             <button class="button" onclick="appendToDisplay('9')">9</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un signo de menos,
+            graficamente se muestra con un - -->
             <button class="button" onclick="appendToDisplay('-')">-</button>
 
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 4,
+            graficamente se muestra con un 4-->
             <button class="button" onclick="appendToDisplay('4')">4</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 5,
+            graficamente se muestra con un 5-->
             <button class="button" onclick="appendToDisplay('5')">5</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 6,
+            graficamente se muestra con un 6-->
             <button class="button" onclick="appendToDisplay('6')">6</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un signo de más,
+            graficamente se muestra con un + -->
             <button class="button" onclick="appendToDisplay('+')">+</button>
 
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 1,
+            graficamente se muestra con un 1-->
             <button class="button" onclick="appendToDisplay('1')">1</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 2,
+            graficamente se muestra con un 2-->
             <button class="button" onclick="appendToDisplay('2')">2</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un 3,
+            graficamente se muestra con un 3-->
             <button class="button" onclick="appendToDisplay('3')">3</button>
+            <!--Al darle click a este botón llamará a la función "calculateResult()", graficamente se muestra con el signo = -->
             <button class="button equal-button" onclick="calculateResult()">=</button>
 
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simples, en este caso un cero,
+            graficamente se muestra con un 0-->
             <button class="button" onclick="appendToDisplay('0')">0</button>
+            <!--Al darle click a este botón llamará a la función "appendToDisplay()" en el JS, al tener algo dentro del paréntesis
+            entre comillas, probablemente la función recibe lo que esté entre las comillas simplesen este caso un punto,
+            graficamente se muestra con un . -->
             <button class="button" onclick="appendToDisplay('.')">.</button>
         </div>
     </div>
-
+    <!--Se manda a llamar el archivo JS-->
     <script src="script.js"></script>
 </body>
 </html>
