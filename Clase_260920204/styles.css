@@ -35,5 +35,48 @@ body{
 }
 
 .calculator-buttons{
-    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button{
+    padding: 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover{
+    background-color: #ddd;
+}
+
+.equal-button{
+    grid-column: span 2;
+    background-color: #007bff;
+    color: white;
+}
+
+.equal-button:hover{
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px){
+    .calculator{
+        padding: 10px;
+    }
+
+    .calculator-screen{
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .button{
+        padding: 15px;
+        font-size: 1rem;
+    }
 }
