@@ -49,7 +49,6 @@ submitButton.style.fontFamily = 'Arial'
 form.appendChild(submitButton);
 
 const message = document.createElement('p');
-message.textContent = 'ola';
 container.appendChild(form)
 container.appendChild(message);
 
@@ -61,13 +60,18 @@ const validarPassword = 'Pochita';
 //Validar el nombre y contraseña
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
-    if(usernameInput.value==validarUser){
-        if(passwordInput.value==validarPassword){
-            alert('Has iniciado sesión correctamente.');
+    if(usernameInput.value===validarUser){
+        if(passwordInput.value===validarPassword){
+            message.textContent = 'Bienvenido :)';
+            message.style.color = 'blue';
         }else{
-            alert('Información de Contraseña Inválida.');
+            message.textContent = 'Constraseña Incorrecta';
+            message.style.color = 'red';
+            message.style.fontFamily = 'Arial';
         }
     }else{
-        alert('Información del Usuario Inválida.')
+        message.textContent = 'Username Incorrecto';
+            message.style.fontFamily = 'Arial';
+            message.style.color = 'red';
     }
 });
