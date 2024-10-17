@@ -74,4 +74,7 @@ form.addEventListener('submit', (event) =>{
             message.style.fontFamily = 'Arial';
             message.style.color = 'red';
     }
+
+    usernameInput.value = '';
+    passwordInput.value = '';
 });
