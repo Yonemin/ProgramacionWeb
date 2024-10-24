@@ -16,7 +16,7 @@ for(let i=0; i<12; i++){
     }
 }
 console.log("Fin del arreglo. Valor de la posición: "+tabla_5[5])
-*/
+
 
 let tabla_5 = [];
 for(let i=0; i<10; i++){
@@ -27,3 +27,20 @@ for(let i=0; i<10; i++){
     }
 }
 console.log("Fin del arreglo. Valor de la posición: "+tabla_5[5])
+
+let arreglo = ["dato_1", "dato_2", "dato_3"];
+arreglo.push("dato_4");
+console.log(arreglo[3]);
+
+//eliminar
+arreglo.splice(1, 1);
+console.log(arreglo);
+*/
+
+//hacer una lista de tareas, al darle agregar sale la tarea y una opción de eliminar
+let listaTareas = [];
+
+function agregar(){
+    let nuevaTarea = document.getElementById('tarea');
+    console.log(nuevaTarea.value);
+}
